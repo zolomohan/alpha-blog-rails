@@ -5,5 +5,9 @@
   <%= @category.name %>
 </p>
 
+<%= will_paginate @category_articles %>
+<%= render 'articles/articles', articles: @category_articles %>
+<%= will_paginate @category_articles %>
+
 <%= link_to 'Edit', edit_category_path(@category) %> |
 <%= link_to 'Back', categories_path %>
