@@ -1,5 +1,11 @@
 <h1><%= @article.title %></h1>
 <p><%= @article.description %></p>
+<ul>
+    <% @article.categories.each do |c| %>
+        <li><%= c.name %></li>
+    <% end %>
+
+</ul>
   
 <%= link_to @article.user.username, user_path(@article.user.id) %>
 <br>
