@@ -1,0 +1,20 @@
+<% if @user.errors.any? %>
+    <h2>The following errors prevented the user from getting <%= @user.new_record? ? "created" : "updated" %>: </h2>
+    <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+    </ul>
+<% end %>
+
+<%= form_for @user do |f| %>
+    <div>
+        <%= f.text_field :username, placeholder: "Username" %>
+        <br>
+        <%= f.email_field :email, placeholder: "Email" %>
+        <br>
+        <%= f.password_field :password, placeholder: "Password" %>
+        <br>
+        <%= f.submit(@user.new_record? ? "Sign up" : "Update User") %>
+    </div>
+<% end %>
