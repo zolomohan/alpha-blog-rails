@@ -1,4 +1,6 @@
 <h1><%= @user.username %></h1>
 <h2><%= @user.email %></h2>
 
-<%= render 'articles/articles', articles: @user.articles %>
+<%= will_paginate @user_articles %>
+<%= render 'articles/articles', articles: @user_articles %>
+<%= will_paginate @user_articles %>
