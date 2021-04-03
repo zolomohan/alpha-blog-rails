@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :article_categories
   resources :categories
   resources :articles
   resources :users, except: [:new]
