@@ -3,7 +3,7 @@
   
 <%= link_to @article.user.username, user_path(@article.user.id) %>
 <br>
-<% if current_user == @article.user %>
+<% if current_user == @article.user || (logged_in? && current_user.admin?) %>
     <%= link_to "Edit", edit_article_path(@article) %>
     <%= link_to "Delete", article_path(@article), method: :delete, data: {confirm: "Are you sure?"} %>
 <% end %>
