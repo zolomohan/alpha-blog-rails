@@ -19,7 +19,7 @@
       <%= link_to 'Login', login_path %>
       <%= link_to 'Signup', signup_path %>
     <% end %>
-    <% if current_user.admin?%>
+    <% if logged_in? && current_user.admin?%>
      You are an Admin.
     <% end %>
   </body>
