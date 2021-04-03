@@ -13,7 +13,7 @@
         <br>
         <%= f.text_area :description, placeholder: "Description" %>
         <br>
-        <%= f.text_field :user_id, placeholder: "User ID", value: "1" %>
+        <%= f.text_field :user_id, placeholder: "User ID", value: current_user.id, style: "display: none"%>
         <br>
         <%= f.submit %>
     </div>
